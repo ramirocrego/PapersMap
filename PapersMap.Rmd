@@ -1,0 +1,45 @@
+---
+title: "Manuscrips map"
+author: "Click on each mark to display paper cover and pdf link"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: vignette
+    math: mathjax
+    smooth_scroll: true
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+---
+
+```{r, echo=F, message=FALSE, warning=FALSE, include=T, out.width = "100%"}
+library(mapview)
+library(leaflet)
+library(leafpop)
+library(dplyr)
+
+data <- read.csv("mypapers.csv")
+data <- data %>% 
+  mutate(tag = paste0("<img src='", data$Photo,"' width='130%'/><br/><b>", "<a target='_blank' href= '",data$Link, "'> Link </a></b>"))
+
+
+
+map <- leaflet() %>% 
+  addTiles() %>% 
+  setView(lng = 0, lat = 0, zoom = 2 ) %>% 
+  addProviderTiles("Esri.WorldStreetMap") %>%
+  addMarkers(data = data,                                  
+             lat = ~Lat,                           
+             lng = ~Long, 
+             clusterOptions =  markerClusterOptions(),
+             label = ~as.character(Year),
+             group = "pnt",
+             popup = ~tag,
+             popupOptions = popupOptions(maxWidth = 400,
+                                         minWidth = 200,
+                                         keepInView = T)) 
+map
+```
+
