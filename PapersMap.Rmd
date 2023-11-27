@@ -24,8 +24,6 @@ data <- read.csv("mypapers.csv")
 data <- data %>% 
   mutate(tag = paste0("<img src='", data$Photo,"' width='130%'/><br/><b>", "<a target='_blank' href= '",data$Link, "'> Link </a></b>"))
 
-
-
 map <- leaflet() %>% 
   addTiles() %>% 
   setView(lng = 0, lat = 0, zoom = 2 ) %>% 
