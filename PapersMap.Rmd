@@ -1,6 +1,6 @@
 ---
-title: "Manuscrips map"
-author: "Click on each mark to display paper cover and pdf link"
+title: "Click on each mark to display paper cover and pdf link"
+author: ""
 output:
   prettydoc::html_pretty:
     theme: tactile
