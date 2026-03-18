@@ -1,12 +1,12 @@
 ---
-title: "Click on each mark to display paper cover and pdf link"
+title: ""
 author: ""
 output:
   prettydoc::html_pretty:
-    theme: tactile
     highlight: vignette
     math: mathjax
     smooth_scroll: true
+    css: styles.css
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,

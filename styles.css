@@ -1,0 +1,52 @@
+body {
+  background-color: #0d1117; /* GitHub dark background */
+  color: #c9d1d9;           /* Light gray text */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a {
+  color: #58a6ff; /* GitHub blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #c9d1d9;
+}
+
+pre, code {
+  background-color: #161b22; /* dark code background */
+  color: #f0f6fc;            /* light code text */
+  font-family: "Fira Code", "Courier New", monospace;
+  border-radius: 6px;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #30363d;
+  background-color: #0d1117;
+}
+
+th, td {
+  border: 1px solid #30363d;
+  padding: 0.5em 1em;
+}
+
+blockquote {
+  border-left: 4px solid #30363d;
+  padding-left: 1em;
+  color: #8b949e;
+}
+
+hr {
+  border-color: #30363d;
+}
